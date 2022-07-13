@@ -1,25 +1,22 @@
 module.exports = app => {
-    const category = require("../controllers/ruangan.controller.js");
+    const ruangan = require("../controllers/ruangan.controller.js");
 
     let router = require("express").Router();
 
     // Create a new post
-    router.post("/", category.create);
+    router.post("/", ruangan.create);
 
-    // Retrieve all category
-    router.get("/", category.findAll);
+    // Retrieve all ruangan
+    router.get("/", ruangan.getAll);
 
     // Retrieve single post
-    router.get("/:id", category.findOne);
+    router.get("/:kode_ruangan", ruangan.findOne);
 
     // Update post
-    router.put("/:id", category.update);
+    router.put("/:kode_ruangan", ruangan.update);
 
     // Delete single post
-    router.delete("/:id", category.delete);
-
-    // Delete all category
-    router.delete("/", category.deleteAll);
+    router.delete("/:kode_ruangan", ruangan.delete);
 
     app.use("/api/ruangan", router);
 }

@@ -22,7 +22,8 @@ module.exports = (sequelize, Sequelize) => {
         //     type: Sequelize.STRING
         // }
         kode_ruangan: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            primaryKey: true
         },
         status: {
             type: Sequelize.STRING
